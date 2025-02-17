@@ -5,13 +5,9 @@
 
 int main() {
   // bind std::ifstream to file...
-  std::ifstream ifs("./data/input.csv");
-
-  // testing your implementation...
-  while (ifs.good()) {
-    Student student = ReadStudentRecFromStream(ifs);
-    if (ifs.fail()) break;
-    std::cout << student.full_name << '\t' << student.uin << '\t' << student.gpa
-              << '\n';
-  }
+  // std::ifstream ifs("./data/input.csv");
+  // std::ifstream ifs{input_file_name};
+  // if (!ifs.is_open()) {
+  //   std::cerr << "Could not  open"
+  // }
 }
