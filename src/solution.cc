@@ -1,7 +1,7 @@
 #include "solution.hpp"
 #include "student.hpp"
 #include <string>
-#include <iostream>
+// #include <iostream>
 
 Student ReadStudentRecFromStream(std::istream& is) {
   char comma;
