@@ -13,24 +13,26 @@ Student ReadStudentRecFromStream(std::istream& is) {
   if (!(is >>  first_name) || !(is >> last_name)) {
     return Student{};
   }
+
   if (!(is >> student.uin)) {
     return Student{};
   }
+
   if (!(is >> comma) || comma != ',') {
     return Student{};
   }
+
   if  (!(is >> student.gpa)) {
     return Student{};
   }
+
   if (last_name.back() == ',') {
     last_name.pop_back();
   } else {
     return Student{};
   }
   student.full_name = first_name + " " + last_name;
-  if (is.fail()) {
-    return Student{};
-  }
 
+  
   return student;
 }
