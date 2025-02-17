@@ -10,20 +10,18 @@ Student ReadStudentRecFromStream(std::istream& is) {
   std::string first_name;
   std::string last_name;
 
-  if (!(is>>  first_name) || !(is >> last_name)) {
+  if (!(is >>  first_name) || !(is >> last_name)) {
     return Student{};
   }
-  if (!(is >> student.uin) || !(is >> student.gpa)) {
+  if (!(is >> student.uin)) {
     return Student{};
   }
   if (!(is >> comma) || comma != ',') {
     return Student{};
   }
-  is >> first_name;
-  is >> last_name ;
-  is >> student.uin;
-  is >> comma >> student.gpa;
-
+  if  (!(is >> student.gpa)) {
+    return Student{};
+  }
   if (last_name.back() == ',') {
     last_name.pop_back();
   } else {
